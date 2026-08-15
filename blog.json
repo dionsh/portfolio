@@ -1,0 +1,128 @@
+{
+  "posts": [
+    {
+      "slug": "full-stack-tutorial-video",
+      "image": "images/blog/fullstack/din.jpg",
+      "category": "Tutorial",
+      "date": "2025-12-25",
+      "readTime": 5,
+      "tags": ["Full Stack", "Tutorial", "Education"],
+      "gallery": [
+  { "type": "tiktok", "url": "https://www.tiktok.com/@shkolladigjitaleferizaj/video/7587883113594883384" }
+],
+      "en": {
+        "title": "Teaching Students How to Build a Full-Stack Website",
+        "description": "A short video where I break down full-stack development for students — and it crossed 70,000 views across platforms.",
+        "content": [
+          { "type": "p", "text": "Late in 2025, I shot a short video explaining **how to build a full-stack website** — front end, back end, and database — using my own project **HumanityConnect** as the example. I didn't expect much from it, but it ended up crossing **70,000+ views across all platforms**." },
+          { "type": "p", "text": "The goal was simple: take everything I had learned over the past two years and compress it into a clear, beginner-friendly explanation that an Albanian-speaking student could actually follow." },
+          { "type": "h3", "text": "What I Covered" },
+          { "type": "p", "text": "I broke the video into the three layers that every full-stack project lives on. For the **front end**, I showed HTML for structure, CSS for design, and how the user-facing pages of HumanityConnect were built. For the **back end**, I walked through how PHP handles the application logic — login, register, joining activities, and everything that happens behind the screen. For the **database**, I showed MySQL — where the users, activities, and certificates are actually stored." },
+          { "type": "h3", "text": "Why It Worked" },
+          { "type": "p", "text": "I think the video reached so many people because it didn't try to teach everything. It just answered one question clearly: *what are the pieces of a full-stack website, and how do they connect?* That's the question almost every beginner gets stuck on, and once you see it laid out on a real project, it clicks." },
+          { "type": "h3", "text": "The Takeaway" },
+          { "type": "p", "text": "Seeing the comments and messages from students who said the video helped them finally understand full-stack development was the best part. It pushed me to start sharing more of what I learn — because if a 37-second video can help thousands of people, imagine what consistent sharing can do." }
+        ]
+      },
+      "sq": {
+        "title": "Mësimi Nxënësve se si të Ndërtojnë një Website Full-Stack",
+        "description": "Një video e shkurtër ku shpjegoj zhvillimin full-stack për nxënësit — dhe kaloi 70,000 shikime në të gjitha platformat.",
+        "content": [
+          { "type": "p", "text": "Në fund të vitit 2025, xhirova një video të shkurtër duke shpjeguar **se si të ndërtosh një website full-stack** — front end, back end dhe databazën — duke përdorur projektin tim **HumanityConnect** si shembull. Nuk prisja shumë prej saj, por përfundoi duke kaluar **mbi 70,000 shikime në të gjitha platformat**." },
+          { "type": "p", "text": "Qëllimi ishte i thjeshtë: të merrja gjithçka që kisha mësuar gjatë dy viteve të fundit dhe ta përmblidhja në një shpjegim të qartë e të kuptueshëm për fillestarët, që një nxënës shqipfolës mund ta ndjekë lehtësisht." },
+          { "type": "h3", "text": "Çfarë Mbulova" },
+          { "type": "p", "text": "E ndava videon në tri shtresat ku jeton çdo projekt full-stack. Për **front end**, tregova HTML-në për strukturën, CSS-në për dizajnin, dhe se si u ndërtuan faqet e dukshme të HumanityConnect. Për **back end**, kalova nëpër mënyrën se si PHP-ja menaxhon logjikën e aplikacionit — login, regjistrimin, bashkimin në aktivitete, dhe gjithçka që ndodh pas ekranit. Për **databazën**, tregova MySQL — ku ruhen përdoruesit, aktivitetet dhe certifikatat." },
+          { "type": "h3", "text": "Pse Funksionoi" },
+          { "type": "p", "text": "Mendoj se videoja arriti kaq shumë njerëz sepse nuk u përpoq të mësonte gjithçka. Ajo i përgjigjej qartë vetëm një pyetjeje: *cilat janë pjesët e një website-i full-stack dhe si lidhen mes vete?* Kjo është pyetja ku ngec pothuajse çdo fillestar, dhe sapo e sheh të shtjelluar mbi një projekt real, e kupton." },
+          { "type": "h3", "text": "Mësimi i Marrë" },
+          { "type": "p", "text": "Të shihja komentet dhe mesazhet nga nxënësit që thanë se videoja i ndihmoi më në fund të kuptonin zhvillimin full-stack ishte pjesa më e mirë. Më shtyu të filloj të ndaj më shumë nga ajo që mësoj — sepse nëse një video 37-sekondëshe mund të ndihmojë mijëra njerëz, imagjino se çfarë mund të bëjë ndarja e vazhdueshme." }
+        ]
+      }
+    },
+    {
+      "slug": "champion-trials-hackathon",
+      "image": "images/blog/champ/hacka.jpg",
+      "category": "Hackathons",
+      "date": "2025-11-23",
+      "readTime": 5,
+      "tags": ["Hackathon", "Champion Trials", "HumanityConnect"],
+      "gallery": [
+        "images/blog/champ/dionn.jpg",
+        "images/blog/champ/apl.jpg",
+        "images/blog/champ/web.jpg"
+      ],
+      "en": {
+        "title": "Finalist at Champion Trials",
+        "description": "48 hours, 600+ applicants from four countries, four Houses — and my project HumanityConnect made it to the finals.",
+        "content": [
+          { "type": "p", "text": "On **22–23 November 2025**, Digital School ran one of its most ambitious competitions yet: **Champion Trials**, a 48-hour hackathon with **over 600 applicants** from **Kosovo, Albania, North Macedonia, and Egypt (Cairo)**." },
+          { "type": "p", "text": "The format was different from anything I had competed in before. Students were split into four **Houses** — Speedster, Hipster, Shadow, and Engineer — each judged on a mix of creativity, technical skill, and how well the project tied into the theme." },
+          { "type": "h3", "text": "The Project: HumanityConnect" },
+          { "type": "p", "text": "I built **HumanityConnect**, a full-stack platform that connects volunteers with local community activities — food donations, animal shelters, soup kitchens, and more. Users can register, browse activities, join them, and receive a certificate of participation once completed." },
+          { "type": "p", "text": "The whole thing was built in **48 hours** with **PHP and MySQL**, with a custom front end on top. You can find the full project in my work section." },
+          { "type": "h3", "text": "Shadow House Finalist" },
+          { "type": "p", "text": "HumanityConnect was selected as a **finalist in the Shadow House**, which honestly felt unreal given the level of the competition. The final round took place on **3 December 2025** during the Champions Webinar." },
+          { "type": "h3", "text": "What I Took From It" },
+          { "type": "p", "text": "Building a real, useful product in 48 hours teaches you what actually matters. You drop the perfect database schema, you drop the prettiest CSS, and you focus on the user journey. If the user can register, join an activity, and get a certificate — you have a product. Everything else is polish." }
+        ]
+      },
+      "sq": {
+        "title": "Finalist në Champion Trials",
+        "description": "48 orë, mbi 600 aplikues nga katër shtete, katër Houses — dhe projekti im HumanityConnect arriti në finale.",
+        "content": [
+          { "type": "p", "text": "Më **22–23 nëntor 2025**, Shkolla Digjitale organizoi një nga garat më ambicioze deri më tani: **Champion Trials**, një hackathon 48-orësh me **mbi 600 aplikues** nga **Kosova, Shqipëria, Maqedonia e Veriut dhe Egjipti (Kajro)**." },
+          { "type": "p", "text": "Formati ishte i ndryshëm nga çdo gjë në të cilën kisha garuar më parë. Nxënësit u ndanë në katër **Houses** — Speedster, Hipster, Shadow dhe Engineer — secila e vlerësuar mbi një kombinim të kreativitetit, aftësive teknike dhe lidhjes me temën." },
+          { "type": "h3", "text": "Projekti: HumanityConnect" },
+          { "type": "p", "text": "Ndërtova **HumanityConnect**, një platformë full-stack që lidh vullnetarët me aktivitete të komunitetit lokal — donacione ushqimi, strehimore për kafshë, kuzhina për bukë e shumë të tjera. Përdoruesit mund të regjistrohen, të shfletojnë aktivitete, t'i bashkohen atyre, dhe të marrin një certifikatë pjesëmarrjeje pasi t'i përfundojnë." },
+          { "type": "p", "text": "I gjithë projekti u ndërtua brenda **48 orësh** me **PHP dhe MySQL**, me një front end të personalizuar mbi to. Mund ta gjeni projektin e plotë në seksionin e punës sime." },
+          { "type": "h3", "text": "Finalist në Shadow House" },
+          { "type": "p", "text": "HumanityConnect u zgjodh si **finalist në Shadows House**, gjë që sinqerisht më dukej e pabesueshme po të mendosh nivelin e garës. Raundi final u zhvillua më **3 dhjetor 2025** gjatë Champions Webinar." },
+          { "type": "h3", "text": "Çfarë Mora nga Kjo" },
+          { "type": "p", "text": "Të ndërtosh një produkt real dhe të dobishëm brenda 48 orësh të mëson se çfarë vërtet ka rëndësi. E lë mënjanë skemën perfekte të databazës, e lë mënjanë CSS-në më të bukur, dhe fokusohesh në rrugëtimin e përdoruesit. Nëse përdoruesi mund të regjistrohet, t'i bashkohet një aktiviteti dhe të marrë një certifikatë — ke një produkt. Gjithçka tjetër është detaj." }
+        ]
+      }
+    },
+    {
+      "slug": "ferizaj-code-fest-finalist",
+      "image": "images/blog/ferizaj_code/ff3.jpeg",
+      "category": "Hackathons",
+      "date": "2025-06-28",
+      "readTime": 5,
+      "tags": ["Hackathon", "Ferizaj Code Fest", "Backend","DION SHERIFI Bookings"],
+      "gallery": [
+        "images/blog/ferizaj_code/ff.jpeg",
+        "images/blog/ferizaj_code/ff4.jpeg",
+        "images/blog/ferizaj_code/ff9.jpeg",
+        "images/blog/ferizaj_code/resul.jpg"
+      ],
+      "en": {
+        "title": "Finalist at Ferizaj Code Fest",
+        "description": "Top 5 in the Backend category at the biggest coding competition in Ferizaj — with my project DION SHERIFI Bookings.",
+        "content": [
+          { "type": "p", "text": "On **28 June 2025**, at **Teatri ADRIANA in Ferizaj**, Digital School Ferizaj held the **second edition of Ferizaj Code Fest** — the biggest coding competition in the city, where students present real, working tech projects in front of a live audience." },
+          { "type": "p", "text": "It wasn't just a competition. It was a full event: project showcases, prizes for finalists and winners, gifts for guests, and a serious push to inspire young people in Ferizaj to take technology seriously as a career." },
+          { "type": "h3", "text": "The Project: DION SHERIFI Bookings" },
+          { "type": "p", "text": "I entered with **DION SHERIFI Bookings**, a full booking platform I built to handle real reservations end-to-end — from picking a service and a time slot, to confirming and managing the booking in an admin panel. You can find the full project in my work section." },
+          { "type": "h3", "text": "Top 5 in the Backend Category" },
+          { "type": "p", "text": "Out of many projects across multiple categories, **DION SHERIFI Bookings was voted Top 5 in the Backend category** — which was treated as the **highest, most technical category** of the event. That meant a lot to me, because backend is where I had been putting in most of my hours." },
+          { "type": "h3", "text": "What I Took From It" },
+          { "type": "p", "text": "Demoing a project live in front of judges and an audience is a completely different skill from building it. You realize fast that a clean explanation matters as much as clean code. Since Ferizaj Code Fest, I've put real effort into being able to explain *why* I built something, not just *what* it does." }
+        ]
+      },
+      "sq": {
+        "title": "Finalist në Ferizaj Code Fest",
+        "description": "Top 5 në kategorinë Backend në garën më të madhe të kodimit në Ferizaj — me projektin tim DION SHERIFI Bookings.",
+        "content": [
+          { "type": "p", "text": "Më **28 qershor 2025**, në **Teatrin ADRIANA në Ferizaj**, Shkolla Digjitale Ferizaj mbajti **edicionin e II-të të Ferizaj Code Fest** — gara më e madhe e kodimit në qytet, ku nxënësit prezantojnë projekte reale e funksionale teknologjike përpara një audience të drejtpërdrejtë." },
+          { "type": "p", "text": "Nuk ishte vetëm një garë. Ishte një event i plotë: prezantime projektesh, çmime për finalistët dhe fituesit, dhurata për musafirët, dhe një shtytje serioze për të frymëzuar të rinjtë e Ferizajt që ta marrin teknologjinë seriozisht si karrierë." },
+          { "type": "h3", "text": "Projekti: DION SHERIFI Bookings" },
+          { "type": "p", "text": "U paraqita me **DION SHERIFI Bookings**, një platformë e plotë rezervimesh që e ndërtova për të menaxhuar rezervime reale nga fillimi në fund — nga zgjedhja e shërbimit dhe e orarit, deri te konfirmimi dhe menaxhimi i rezervimit në një panel admini. Mund ta gjeni projektin e plotë në seksionin e punës sime." },
+          { "type": "h3", "text": "Top 5 në Kategorinë Backend" },
+          { "type": "p", "text": "Nga shumë projekte në kategori të ndryshme, **DION SHERIFI Bookings u votua Top 5 në kategorinë Backend** — e cila trajtohej si **kategoria më e lartë dhe më teknike** e eventit. Kjo do të thoshte shumë për mua, sepse pikërisht në backend kisha kaluar pjesën më të madhe të orëve të punës." },
+          { "type": "h3", "text": "Çfarë Mora nga Kjo" },
+          { "type": "p", "text": "Të prezantosh një projekt drejtpërdrejt përpara jurisë dhe audiencës është një aftësi krejtësisht e ndryshme nga ndërtimi i tij. E kupton shpejt që një shpjegim i pastër vlen po aq sa një kod i pastër. Që nga Ferizaj Code Fest, kam investuar realisht në aftësinë për të shpjeguar *pse* e kam ndërtuar diçka, jo vetëm *çfarë* bën ajo." }
+        ]
+      }
+    }
+  ]
+}

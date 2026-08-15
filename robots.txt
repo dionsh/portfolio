@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://dionsherifi.com/sitemap.xml

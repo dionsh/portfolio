@@ -1,0 +1,16 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "dionsherifi.vercel.app"
+        }
+      ],
+      "destination": "https://dionsherifi.com/:path*",
+      "permanent": true
+    }
+  ]
+}
