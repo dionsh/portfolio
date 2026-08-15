@@ -220,8 +220,8 @@
 
   async function loadBlogData() {
     try {
-      const res = await fetch('blog.json', { cache: 'no-store' });
-      if (!res.ok) throw new Error('blog.json HTTP ' + res.status);
+      const res = await fetch('json/blog.json', { cache: 'no-store' });
+      if (!res.ok) throw new Error('json/blog.json HTTP ' + res.status);
       const data = await res.json();
       blogData = (data.posts || []).sort((a, b) => new Date(b.date) - new Date(a.date));
       return blogData;
