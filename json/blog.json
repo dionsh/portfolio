@@ -1,6 +1,194 @@
 {
   "posts": [
     {
+      "slug": "ferizaj-code-fest-2026-first-place",
+      "image": "images/blog/ferizaj_code26/cover.jpeg",
+      "category": "Hackathons",
+      "date": "2026-07-11",
+      "homeOrder": 1,
+      "readTime": 5,
+      "tags": ["React Native", "Ferizaj Code Fest", "DS Banking", "1st Place"],
+      "gallery": [
+        "images/blog/ferizaj_code26/IMG_6836.jpeg",
+        "images/blog/ferizaj_code26/IMG_6854.jpeg"
+      ],
+      "en": {
+        "title": "First Place at Ferizaj Code Fest 2026",
+        "description": "DS Banking won 1st place in the React Native category — the most competitive category of the whole competition.",
+        "content": [
+          { "type": "p", "text": "On **11 July 2026** I competed at **Ferizaj Code Fest 2026** and came away with **1st place in the React Native category** with my project **DS Banking**." },
+          { "type": "p", "text": "Ferizaj Code Fest is an annual technology competition that brings young developers together to present real projects across programming, application development, web development and artificial intelligence. It is the kind of event where you don't get to hide behind a slide deck — the project has to run." },
+          { "type": "h3", "text": "The Project: DS Banking" },
+          { "type": "p", "text": "**DS Banking** is a mobile banking application built with **React Native**, designed to feel like a real digital bank rather than a classroom demo. It covers secure authentication, money transfers, transaction history and interactive analytics, all behind an interface that stays out of the user's way." },
+          { "type": "p", "text": "The part I enjoyed building most was the gamification layer. Most finance apps are something you open, check, and close — so I added **mini-games and daily challenges** to give people a reason to come back and actually pay attention to their money." },
+          { "type": "h3", "text": "The Hardest Category to Win" },
+          { "type": "p", "text": "React Native was the most competitive category of the competition, which is exactly why the result meant so much. Winning a category where everyone is working with the same tools means the difference came down to execution — how complete the app felt, how well it held up under questions, and whether it actually solved the problem it claimed to solve." },
+          { "type": "h3", "text": "What I Took From It" },
+          { "type": "p", "text": "Building for a jury forces you to finish things. A half-working transfer screen is invisible in a demo video and very visible in a live walkthrough, so every feature had to survive being clicked on by someone who had never seen the app before. That pressure made DS Banking a much tighter product than it would have been otherwise." },
+          { "type": "p", "text": "A big thank you to the organisers of Ferizaj Code Fest 2026, the jury, the sponsors, and everyone who put in the work behind the scenes to make the event happen." }
+        ]
+      },
+      "sq": {
+        "title": "Vendi i Parë në Ferizaj Code Fest 2026",
+        "description": "DS Banking fitoi vendin e parë në kategorinë React Native — kategoria më konkurruese e gjithë garës.",
+        "content": [
+          { "type": "p", "text": "Më **11 korrik 2026** garova në **Ferizaj Code Fest 2026** dhe dola me **vendin e parë në kategorinë React Native** me projektin tim **DS Banking**." },
+          { "type": "p", "text": "Ferizaj Code Fest është një garë vjetore teknologjike që mbledh zhvillues të rinj për të prezantuar projekte reale në programim, zhvillim aplikacionesh, zhvillim web dhe inteligjencë artificiale. Është lloji i eventit ku nuk mund të fshihesh pas një prezantimi — projekti duhet të funksionojë." },
+          { "type": "h3", "text": "Projekti: DS Banking" },
+          { "type": "p", "text": "**DS Banking** është një aplikacion bankar celular i ndërtuar me **React Native**, i dizajnuar të ndihet si një bankë digjitale reale dhe jo si një demo shkolle. Mbulon autentifikim të sigurt, transferta parash, historik transaksionesh dhe analitikë interaktive, të gjitha pas një ndërfaqeje që nuk i qëndron përdoruesit në rrugë." },
+          { "type": "p", "text": "Pjesa që më pëlqeu më shumë ta ndërtoja ishte shtresa e gamifikimit. Shumica e aplikacioneve financiare janë diçka që e hap, e kontrollon dhe e mbyll — prandaj shtova **mini-lojëra dhe sfida ditore** për t'u dhënë njerëzve një arsye të kthehen dhe t'u kushtojnë vëmendje parave të tyre." },
+          { "type": "h3", "text": "Kategoria më e Vështirë për t'u Fituar" },
+          { "type": "p", "text": "React Native ishte kategoria më konkurruese e garës, dhe pikërisht prandaj rezultati kishte kaq shumë peshë. Të fitosh një kategori ku të gjithë punojnë me të njëjtat mjete do të thotë që dallimin e bëri ekzekutimi — sa i plotë ndihej aplikacioni, sa mirë qëndroi përballë pyetjeve, dhe a e zgjidhte vërtet problemin që pretendonte." },
+          { "type": "h3", "text": "Çfarë Mora nga Kjo" },
+          { "type": "p", "text": "Të ndërtosh për një juri të detyron t'i përfundosh gjërat. Një ekran transfertash gjysmë i funksionalizuar nuk duket në një video demo dhe duket shumë qartë në një prezantim të drejtpërdrejtë, prandaj çdo veçori duhej t'i mbijetonte klikimeve të dikujt që nuk e kishte parë kurrë aplikacionin. Ai presion e bëri DS Banking një produkt shumë më të plotë sesa do të ishte ndryshe." },
+          { "type": "p", "text": "Një falënderim i madh për organizatorët e Ferizaj Code Fest 2026, jurinë, sponsorët dhe të gjithë ata që punuan pas skenave për ta bërë eventin të mundur." }
+        ]
+      }
+    },
+    {
+      "slug": "junctionx-tirana-raiquest",
+      "image": "images/blog/junction_Tirana26/cover.jpeg",
+      "category": "Hackathons",
+      "date": "2026-06-21",
+      "homeOrder": 3,
+      "readTime": 4,
+      "tags": ["Hackathon", "JunctionX", "React Native", "RaiQuest"],
+      "gallery": [
+        "images/blog/junction_Tirana26/IMG_4296.jpeg",
+        "images/blog/junction_Tirana26/IMG_4459.jpg"
+      ],
+      "en": {
+        "title": "Three Days at JunctionX Tirana",
+        "description": "More than 500 participants, three days of building, and RaiQuest — a React Native app made to turn banking into something worth opening.",
+        "content": [
+          { "type": "p", "text": "**JunctionX Tirana** ran from **19–21 June 2026** and brought **more than 500 participants** together for three days of building, innovating and solving real-world challenges. Being in a room that full of people who all want to ship something is its own kind of fuel." },
+          { "type": "h3", "text": "The Project: RaiQuest" },
+          { "type": "p", "text": "My team and I built **RaiQuest**, a **React Native** application that uses gamification to make banking more engaging, interactive and enjoyable. The idea behind it was simple: a banking app shouldn't only be a place where transactions happen. It should give people a reason to come back and take an active role in managing their money." },
+          { "type": "p", "text": "So instead of treating the balance screen as the destination, we built progress, challenges and rewards around everyday financial behaviour — turning the parts of banking people usually avoid into something closer to a game." },
+          { "type": "h3", "text": "We Didn't Win" },
+          { "type": "p", "text": "As competitors we all aim for the top, and we didn't take the win. I would rather say that plainly than dress it up. What it left me with is a much clearer picture of the gap between a good idea and a finished, convincing product — and a lot more motivation to close it." },
+          { "type": "h3", "text": "What I Took From It" },
+          { "type": "p", "text": "The most valuable part of the three days wasn't the build. It was meeting people who are working on genuinely hard problems and comparing notes with them at two in the morning. I left with new friends, a longer reading list, and a much better sense of where I actually stand." },
+          { "type": "p", "text": "Thank you to the organisers, mentors, judges, sponsors and everyone working behind the scenes who made JunctionX Tirana what it was. This will not be my last Junction — and next time I'm coming back with one goal in mind." }
+        ]
+      },
+      "sq": {
+        "title": "Tri Ditë në JunctionX Tirana",
+        "description": "Mbi 500 pjesëmarrës, tri ditë ndërtimi dhe RaiQuest — një aplikacion React Native i bërë që bankingu të ia vlejë të hapet.",
+        "content": [
+          { "type": "p", "text": "**JunctionX Tirana** u zhvillua nga **19–21 qershor 2026** dhe mblodhi **mbi 500 pjesëmarrës** për tri ditë ndërtimi, inovacioni dhe zgjidhjeje sfidash reale. Të jesh në një sallë plot me njerëz që të gjithë duan të nxjerrin diçka është një lloj karburanti në vete." },
+          { "type": "h3", "text": "Projekti: RaiQuest" },
+          { "type": "p", "text": "Unë dhe ekipi im ndërtuam **RaiQuest**, një aplikacion **React Native** që përdor gamifikimin për ta bërë bankingun më tërheqës, më interaktiv dhe më të këndshëm. Ideja pas tij ishte e thjeshtë: një aplikacion bankar nuk duhet të jetë vetëm një vend ku ndodhin transaksionet. Ai duhet t'u japë njerëzve një arsye të kthehen dhe të marrin rol aktiv në menaxhimin e parave të tyre." },
+          { "type": "p", "text": "Prandaj, në vend që ta trajtonim ekranin e bilancit si destinacion, ndërtuam progres, sfida dhe shpërblime rreth sjelljes financiare të përditshme — duke i kthyer pjesët e bankingut që njerëzit zakonisht i shmangin në diçka më afër një loje." },
+          { "type": "h3", "text": "Nuk Fituam" },
+          { "type": "p", "text": "Si garues të gjithë synojmë majën, dhe ne nuk e morëm fitoren. Preferoj ta them këtë hapur sesa ta zbukuroj. Ajo që më la është një pamje shumë më e qartë e distancës mes një ideje të mirë dhe një produkti të përfunduar e bindës — dhe shumë më tepër motivim për ta mbyllur atë distancë." },
+          { "type": "h3", "text": "Çfarë Mora nga Kjo" },
+          { "type": "p", "text": "Pjesa më e vlefshme e tri ditëve nuk ishte ndërtimi. Ishte takimi me njerëz që punojnë mbi probleme vërtet të vështira dhe shkëmbimi i ideve me ta në orën dy të natës. U largova me miq të rinj, një listë më të gjatë leximesh, dhe një ndjenjë shumë më të mirë se ku qëndroj realisht." },
+          { "type": "p", "text": "Faleminderit organizatorëve, mentorëve, jurisë, sponsorëve dhe të gjithëve që punuan pas skenave e që e bënë JunctionX Tirana atë që ishte. Ky nuk do të jetë Junction-i im i fundit — dhe herën tjetër po vij me një qëllim të vetëm në mendje." }
+        ]
+      }
+    },
+    {
+      "slug": "buildact-hackathon-sproutsync",
+      "image": "images/blog/buildact_hck/cover.jpeg",
+      "category": "Hackathons",
+      "date": "2026-06-07",
+      "homeOrder": 4,
+      "readTime": 5,
+      "tags": ["Hackathon", "BuildAct", "SproutSync", "Computer Vision"],
+      "gallery": [
+        "images/blog/buildact_hck/IMG_3464.jpeg",
+        "images/blog/buildact_hck/IMG_3466.jpeg",
+        "images/blog/buildact_hck/IMG_4050.jpeg"
+      ],
+      "en": {
+        "title": "Top 10 at BuildAct with SproutSync",
+        "description": "48 hours at ICK Prishtina spent pushing SproutSync further — computer vision, a new environmental node, and live alerts.",
+        "content": [
+          { "type": "p", "text": "On **6–7 June 2026**, my team and I spent 48 hours at the **BuildAct Hackathon**, hosted by the **Innovation Centre Kosovo (ICK)** in Prishtina, and finished in the **top 10**. The final result wasn't what we had hoped for, but I'm genuinely proud of how far we moved the project in two days." },
+          { "type": "p", "text": "We came in with **SproutSync**, our smart plant monitoring ecosystem, and used the hackathon to expand what it can actually do." },
+          { "type": "h3", "text": "What We Built in 48 Hours" },
+          { "type": "p", "text": "**Light Meter** — a camera-based tool that measures light levels and tells you whether a plant is getting adequate exposure where it currently sits." },
+          { "type": "p", "text": "**Pot Measure** — a computer vision feature that estimates a pot's diameter and volume straight from the camera, with no manual measuring." },
+          { "type": "p", "text": "**Nearby Device Scanner** — lets users detect and connect to nearby SproutSync sensors and devices." },
+          { "type": "p", "text": "**Klima Node** — a newly developed environmental monitoring node that widens the range of environmental data the system can collect." },
+          { "type": "p", "text": "**Live Notifications** — real-time alerts about the health and well-being of your plants, so problems surface before the plant shows them." },
+          { "type": "h3", "text": "Where SproutSync Stands Now" },
+          { "type": "p", "text": "With everything in place, SproutSync lets users scan a plant to identify its species, detect whether it is healthy or unhealthy, receive diagnostics and AI-powered insights about its condition, monitor watering levels and light exposure through our custom-built sensors, chat with an integrated AI assistant for plant care guidance, and connect to nearby SproutSync hardware." },
+          { "type": "h3", "text": "What I Took From It" },
+          { "type": "p", "text": "Two days is not enough time to build something from nothing, but it is enough time to take something that already works and make it noticeably better — if you know the codebase cold. Coming in with a running project instead of an empty repository was the single best decision we made." },
+          { "type": "p", "text": "A huge thank you to the organisers, mentors, judges and everyone who contributed to making BuildAct such a valuable experience." }
+        ]
+      },
+      "sq": {
+        "title": "Top 10 në BuildAct me SproutSync",
+        "description": "48 orë në ICK Prishtinë duke e çuar SproutSync më tej — computer vision, një nyje e re mjedisore dhe njoftime në kohë reale.",
+        "content": [
+          { "type": "p", "text": "Më **6–7 qershor 2026**, unë dhe ekipi im kaluam 48 orë në **BuildAct Hackathon**, organizuar nga **Innovation Centre Kosovo (ICK)** në Prishtinë, dhe përfunduam në **top 10**. Rezultati final nuk ishte ai që kishim shpresuar, por jam sinqerisht krenar për sa larg e çuam projektin brenda dy ditësh." },
+          { "type": "p", "text": "Erdhëm me **SproutSync**, ekosistemin tonë të monitorimit inteligjent të bimëve, dhe e shfrytëzuam hackathonin për të zgjeruar atë që ai realisht mund të bëjë." },
+          { "type": "h3", "text": "Çfarë Ndërtuam për 48 Orë" },
+          { "type": "p", "text": "**Light Meter** — një mjet i bazuar në kamerë që mat nivelin e dritës dhe të tregon nëse bima po merr ekspozim të mjaftueshëm aty ku ndodhet." },
+          { "type": "p", "text": "**Pot Measure** — një veçori computer vision që vlerëson diametrin dhe volumin e vazos direkt nga kamera, pa matje manuale." },
+          { "type": "p", "text": "**Nearby Device Scanner** — u lejon përdoruesve të gjejnë dhe të lidhen me sensorë e pajisje SproutSync në afërsi." },
+          { "type": "p", "text": "**Klima Node** — një nyje e sapozhvilluar e monitorimit mjedisor që zgjeron gamën e të dhënave mjedisore që sistemi mund të mbledhë." },
+          { "type": "p", "text": "**Live Notifications** — njoftime në kohë reale për shëndetin dhe mirëqenien e bimëve, që problemet të dalin në sipërfaqe para se bima t'i shfaqë." },
+          { "type": "h3", "text": "Ku Ndodhet SproutSync Tani" },
+          { "type": "p", "text": "Me gjithçka të vendosur, SproutSync u lejon përdoruesve të skanojnë një bimë për të identifikuar llojin e saj, të dallojnë nëse është e shëndetshme apo jo, të marrin diagnostikime dhe njohuri të fuqizuara nga AI për gjendjen e saj, të monitorojnë nivelin e ujitjes dhe ekspozimin ndaj dritës përmes sensorëve tanë të ndërtuar posaçërisht, të bisedojnë me një asistent AI të integruar për udhëzime kujdesi, dhe të lidhen me pajisjet SproutSync në afërsi." },
+          { "type": "h3", "text": "Çfarë Mora nga Kjo" },
+          { "type": "p", "text": "Dy ditë nuk janë kohë e mjaftueshme për të ndërtuar diçka nga hiçi, por janë kohë e mjaftueshme për të marrë diçka që tashmë funksionon dhe për ta bërë dukshëm më të mirë — nëse e njeh kodin përmendsh. Të vinim me një projekt funksional në vend të një repozitori bosh ishte vendimi më i mirë që morëm." },
+          { "type": "p", "text": "Një falënderim i madh për organizatorët, mentorët, jurinë dhe të gjithë ata që kontribuuan për ta bërë BuildAct një përvojë kaq të vlefshme." }
+        ]
+      }
+    },
+    {
+      "slug": "junctionx-junior-itp-prizren",
+      "image": "images/blog/itp_prizren/cover.jpeg",
+      "category": "Hackathons",
+      "date": "2026-05-23",
+      "homeOrder": 2,
+      "readTime": 5,
+      "tags": ["Hackathon", "JunctionX Junior", "SproutSync", "2nd Place"],
+      "gallery": [
+        "images/blog/itp_prizren/IMG_1533.JPG",
+        "images/blog/itp_prizren/IMG_3866.jpg",
+        "images/blog/itp_prizren/IMG_3892.jpeg"
+      ],
+      "en": {
+        "title": "Second Place at JunctionX Junior in Prizren",
+        "description": "SproutSync — an AI-powered plant monitoring platform with hardware we designed ourselves — took 2nd place at ITP Prizren.",
+        "content": [
+          { "type": "p", "text": "From **21–23 May 2026** I took part in the **JunctionX Junior Hackathon** hosted at **ITP Prizren**. My team and I finished in **2nd place** with our project, **SproutSync**." },
+          { "type": "h3", "text": "The Project: SproutSync" },
+          { "type": "p", "text": "**SproutSync** is an AI-powered web application built to modernise and simplify plant monitoring. Most plant-care apps stop at a species lookup and a watering reminder. We wanted the full picture — smart software, artificial intelligence, and **hardware we designed and built entirely ourselves**." },
+          { "type": "p", "text": "That last part is what made the project. We didn't only develop the software; we designed the sensors and their physical structure too, which meant the demo wasn't a mockup. It read real plants, through real sensors, in real time." },
+          { "type": "h3", "text": "What It Does" },
+          { "type": "p", "text": "Users can scan a plant to identify its species, detect whether it is healthy or unhealthy, receive diagnostics and insights about its condition, and monitor watering levels and light exposure through our custom sensors." },
+          { "type": "h3", "text": "Training the Model" },
+          { "type": "p", "text": "The most exciting part for me was **manually training our AI model** so the plant analysis came back accurate rather than confidently wrong. Getting a model to reliably tell a thirsty plant from a sick one is much harder than it sounds, and it taught me more about data quality than any tutorial has." },
+          { "type": "h3", "text": "What I Took From It" },
+          { "type": "p", "text": "Our goal was to replace the plant-care apps people already use by offering everything they provide and more — and for a weekend project, we got closer to that than I expected. Full credit to my team for the focus, patience and teamwork under pressure; turning an idea into a fully working product in three days only happens when everyone holds their part." },
+          { "type": "p", "text": "Huge thanks to the organisers, mentors, and everyone involved in making this event possible." }
+        ]
+      },
+      "sq": {
+        "title": "Vendi i Dytë në JunctionX Junior në Prizren",
+        "description": "SproutSync — një platformë monitorimi bimësh e fuqizuar nga AI, me hardware të dizajnuar nga ne — zuri vendin e dytë në ITP Prizren.",
+        "content": [
+          { "type": "p", "text": "Nga **21–23 maj 2026** mora pjesë në **JunctionX Junior Hackathon** të mbajtur në **ITP Prizren**. Unë dhe ekipi im përfunduam në **vendin e dytë** me projektin tonë, **SproutSync**." },
+          { "type": "h3", "text": "Projekti: SproutSync" },
+          { "type": "p", "text": "**SproutSync** është një aplikacion web i fuqizuar nga AI, i ndërtuar për të modernizuar dhe thjeshtuar monitorimin e bimëve. Shumica e aplikacioneve për kujdesin ndaj bimëve ndalen te identifikimi i llojit dhe një kujtesë për ujitje. Ne donim pamjen e plotë — softuer inteligjent, inteligjencë artificiale dhe **hardware që e dizajnuam e ndërtuam tërësisht vetë**." },
+          { "type": "p", "text": "Pikërisht kjo e fundit e bëri projektin. Nuk zhvilluam vetëm softuerin; dizajnuam edhe sensorët dhe strukturën e tyre fizike, që do të thoshte se demoja nuk ishte një maketë. Ajo lexonte bimë reale, përmes sensorëve realë, në kohë reale." },
+          { "type": "h3", "text": "Çfarë Bën" },
+          { "type": "p", "text": "Përdoruesit mund të skanojnë një bimë për të identifikuar llojin e saj, të dallojnë nëse është e shëndetshme apo jo, të marrin diagnostikime dhe njohuri për gjendjen e saj, dhe të monitorojnë nivelin e ujitjes e ekspozimin ndaj dritës përmes sensorëve tanë." },
+          { "type": "h3", "text": "Trajnimi i Modelit" },
+          { "type": "p", "text": "Pjesa më emocionuese për mua ishte **trajnimi manual i modelit tonë të AI** që analiza e bimëve të kthehej e saktë dhe jo e gabuar me vetëbesim. Ta bësh një model të dallojë me besueshmëri një bimë të etur nga një bimë e sëmurë është shumë më e vështirë sesa duket, dhe më mësoi më shumë për cilësinë e të dhënave sesa çdo tutorial." },
+          { "type": "h3", "text": "Çfarë Mora nga Kjo" },
+          { "type": "p", "text": "Qëllimi ynë ishte të zëvendësonim aplikacionet e kujdesit për bimët që njerëzit i përdorin tashmë, duke ofruar gjithçka që ato ofrojnë e më shumë — dhe për një projekt fundjave, arritëm më afër se sa prisja. Të gjitha meritat për ekipin tim për fokusin, durimin dhe punën ekipore nën presion; ta kthesh një ide në produkt plotësisht funksional brenda tri ditësh ndodh vetëm kur secili e mban pjesën e vet." },
+          { "type": "p", "text": "Falënderime të mëdha për organizatorët, mentorët dhe të gjithë të përfshirët që e bënë këtë event të mundur." }
+        ]
+      }
+    },
+    {
       "slug": "full-stack-tutorial-video",
       "image": "images/blog/fullstack/din.jpg",
       "category": "Tutorial",

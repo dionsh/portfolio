@@ -1,0 +1,68 @@
+{
+  "projects": [
+    {
+      "slug": "humanityconnect",
+      "title": "HumanityConnect",
+      "image": "images/foto4.png",
+      "category": "Web App",
+      "featured": true,
+      "github": "https://github.com/dionsh/HumanityConnect",
+      "live": "https://github.com/dionsh/HumanityConnect",
+      "tags": ["HTML", "CSS", "JavaScript", "PHP", "MySQL", "Bootstrap", "Chart.js"],
+      "en": {
+        "description": "HumanityConnect is a Good Deeds Tracker that connects volunteers with events and tracks their hours or achievements."
+      },
+      "sq": {
+        "description": "HumanityConnect është një Gjurmues i Veprave të Mira që lidh vullnetarët me ngjarjet dhe paraqet orët ose arritjet e tyre."
+      }
+    },
+    {
+      "slug": "ds-banking",
+      "title": "DS Banking",
+      "image": "images/23.png",
+      "category": "Mobile App",
+      "featured": true,
+      "github": "https://github.com/dionsh/DS-Banking",
+      "live": "https://github.com/dionsh/DS-Banking",
+      "tags": ["React Native", "PHP", "MySQL"],
+      "en": {
+        "description": "DS Banking is a React Native mobile banking app that lets users securely manage finances on the go."
+      },
+      "sq": {
+        "description": "DS Banking është një aplikacion bankar celular me React Native që u lejon përdoruesve të menaxhojnë në mënyrë të sigurt financat në lëvizje."
+      }
+    },
+    {
+      "slug": "vogue",
+      "title": "Vogue",
+      "image": "images/foto1.png",
+      "category": "WordPress",
+      "featured": true,
+      "github": "https://github.com/dionsh/Vogue-Website",
+      "live": "https://github.com/dionsh/Vogue-Website",
+      "tags": ["WordPress", "HTML", "CSS", "JavaScript", "PHP", "MySQL"],
+      "en": {
+        "description": "A modern, high-fashion concept website inspired by Vogue, meticulously crafted with WordPress to deliver a premium editorial experience."
+      },
+      "sq": {
+        "description": "Një website modern dhe me koncept të modës së lartë, e frymëzuar nga Vogue, e krijuar me WordPress për të ofruar një përvojë editoriale premium."
+      }
+    },
+    {
+      "slug": "dion-sherifi-bookings",
+      "title": "DION SHERIFI Bookings",
+      "image": "images/foto2.png",
+      "category": "Web App",
+      "featured": true,
+      "github": "https://github.com/dionsh/DION-SHERIFI-Bookings",
+      "live": "https://github.com/dionsh/DION-SHERIFI-Bookings",
+      "tags": ["HTML", "CSS", "JavaScript", "PHP", "MySQL", "Bootstrap", "Chart.js"],
+      "en": {
+        "description": "DION SHERIFI Bookings is an all-in-one reservation ecosystem built to handle scheduling across multiple business sectors. The platform connects clients and businesses through three tailored user roles."
+      },
+      "sq": {
+        "description": "DION SHERIFI Bookings është një ekosistem rezervimesh gjithëpërfshirës i ndërtuar për të trajtuar planifikimin në sektorë të shumtë biznesi. Platforma lidh klientët dhe bizneset përmes tre roleve të personalizuara të përdoruesit."
+      }
+    }
+  ]
+}

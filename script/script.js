@@ -1,8 +1,12 @@
 /* ==========================================================================
    DION SHERIFI — Portfolio JS
    Features: EN/SQ language toggle, mobile menu close, navbar scroll state,
-             scroll reveal, blog cards loaded from blog.json,
+             scroll reveal, blog cards loaded from json/blog.json,
+             project cards loaded from json/projects.json,
              article.html dynamic renderer with lightbox.
+
+   One script for every page. Which parts run is decided in boot() by
+   probing for #blog-grid, #work-grid and #article-content.
    ========================================================================== */
 
 (() => {
@@ -33,20 +37,26 @@
 
       'work.title':     'My work',
       'work.sub':       "A selection of projects I've built. Each one solves a specific problem.",
+      'work.allTitle':  'All projects',
+      'work.allSub':    "Everything I've built so far. Each one solves a specific problem.",
+      'work.loading':   'Loading projects…',
+      'work.error':     'Could not load projects. Please try again later.',
+      'work.seeAll':    'See All Projects <i class="bi bi-arrow-right"></i>',
 
       'card.live':      'Live Demo',
       'card.github':    'View on GitHub',
-      'card.1.desc':    'HumanityConnect is a Good Deeds Tracker that connects volunteers with events and tracks their hours or achievements.',
-      'card.2.desc':    'DS Banking is a React Native mobile banking app that lets users securely manage finances on the go.',
-      'card.3.desc':    'A modern, high-fashion concept website inspired by Vogue, meticulously crafted with WordPress to deliver a premium editorial experience.',
-      'card.4.desc':    'DION SHERIFI Bookings is an all-in-one reservation ecosystem built to handle scheduling across multiple business sectors. The platform connects clients and businesses through three tailored user roles.',
 
       'blog.title':     'My blog',
       'blog.heading':   'Highlights from my journey',
       'blog.sub':       'Moments, wins, and lessons from competitions, projects, and growth as a developer.',
+      'blog.allTitle':  'All posts',
+      'blog.allSub':    "Every post I've written — moments, wins, and lessons from competitions, projects, and growth as a developer.",
       'blog.loading':   'Loading posts…',
       'blog.read':      'Read Article',
       'blog.error':     'Could not load posts. Please try again later.',
+      'blog.seeAll':    'See All Posts <i class="bi bi-arrow-right"></i>',
+
+      'nav.backHome':   '<i class="bi bi-arrow-left"></i> Back to home',
 
       'contact.title':  'Get in touch',
       'contact.lead':   "I'm currently open to freelance work and collaboration. Whether it's a project idea, a question, or just a hello — my inbox is open.",
@@ -84,20 +94,26 @@
 
       'work.title':     'Punët e mia',
       'work.sub':       'Një përzgjedhje projektesh që kam ndërtuar. Secili zgjidh një problem specifik.',
+      'work.allTitle':  'Të gjitha projektet',
+      'work.allSub':    'Gjithçka që kam ndërtuar deri tani. Secili zgjidh një problem specifik.',
+      'work.loading':   'Po ngarkohen projektet…',
+      'work.error':     'Nuk mund të ngarkohen projektet. Provo më vonë.',
+      'work.seeAll':    'Shiko të Gjitha Projektet <i class="bi bi-arrow-right"></i>',
 
       'card.live':      'Demo Live',
       'card.github':    'Shiko në GitHub',
-      'card.1.desc':    'HumanityConnect është një Gjurmues i Veprave të Mira që lidh vullnetarët me ngjarjet dhe paraqet orët ose arritjet e tyre.',
-      'card.2.desc':    'DS Banking është një aplikacion bankar celular me React Native që u lejon përdoruesve të menaxhojnë në mënyrë të sigurt financat në lëvizje.',
-      'card.3.desc':    'Një website modern dhe me koncept të modës së lartë, e frymëzuar nga Vogue, e krijuar me WordPress për të ofruar një përvojë editoriale premium.',
-      'card.4.desc':    'DION SHERIFI Bookings është një ekosistem rezervimesh gjithëpërfshirës i ndërtuar për të trajtuar planifikimin në sektorë të shumtë biznesi. Platforma lidh klientët dhe bizneset përmes tre roleve të personalizuara të përdoruesit.',
 
       'blog.title':     'Blogu im',
       'blog.heading':   'Momentet kryesore nga rrugëtimi im',
       'blog.sub':       'Momente, fitore dhe mësime nga garat, projektet dhe rritja si zhvillues.',
+      'blog.allTitle':  'Të gjitha postimet',
+      'blog.allSub':    'Çdo postim që kam shkruar — momente, fitore dhe mësime nga garat, projektet dhe rritja si zhvillues.',
       'blog.loading':   'Po ngarkohen postimet…',
       'blog.read':      'Lexo Artikullin',
       'blog.error':     'Nuk mund të ngarkohen postimet. Provo më vonë.',
+      'blog.seeAll':    'Shiko të Gjitha Postimet <i class="bi bi-arrow-right"></i>',
+
+      'nav.backHome':   '<i class="bi bi-arrow-left"></i> Kthehu te kreu',
 
       'contact.title':  'Më kontakto',
       'contact.lead':   'Aktualisht jam i hapur për punë freelance dhe bashkëpunime. Qoftë një ide projekti, një pyetje, apo thjesht një përshëndetje — kutia ime është e hapur.',
@@ -140,6 +156,7 @@
 
     // Re-render dynamic content if it exists
     if (blogData) renderBlogCards();
+    if (projectData) renderProjectCards();
     if (currentPost) renderArticle(currentPost);
 
     // Update language toggle label (shows the *other* language)
@@ -201,6 +218,15 @@
     return d.toLocaleDateString(locale, { year: 'numeric', month: 'long', day: 'numeric' });
   }
 
+  // Escape a value before dropping it into an HTML attribute
+  function esc(value) {
+    return String(value ?? '')
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;');
+  }
+
   // Minimal inline markdown: **bold** only (keeps it safe & simple)
   function renderInlineMarkdown(text) {
     // Escape HTML first
@@ -213,16 +239,22 @@
   }
 
   /* ---------------------------------------------------------------
-     7. BLOG DATA loading
+     7. DATA loading — blog posts + projects
      --------------------------------------------------------------- */
-  let blogData = null;          // full posts array
+  let blogData    = null;       // full posts array, sorted newest first
+  let projectData = null;       // full projects array, in file order
   let currentPost = null;       // post viewed on article.html
+
+  async function fetchJSON(path) {
+    const res = await fetch(path, { cache: 'no-store' });
+    if (!res.ok) throw new Error(path + ' HTTP ' + res.status);
+    return res.json();
+  }
 
   async function loadBlogData() {
     try {
-      const res = await fetch('json/blog.json', { cache: 'no-store' });
-      if (!res.ok) throw new Error('json/blog.json HTTP ' + res.status);
-      const data = await res.json();
+      const data = await fetchJSON('json/blog.json');
+      // Sorted newest first, so "the 3 latest" is just a slice of this order
       blogData = (data.posts || []).sort((a, b) => new Date(b.date) - new Date(a.date));
       return blogData;
     } catch (err) {
@@ -231,10 +263,36 @@
     }
   }
 
+  async function loadProjectData() {
+    try {
+      const data = await fetchJSON('json/projects.json');
+      projectData = data.projects || [];
+      return projectData;
+    } catch (err) {
+      console.error('Failed to load projects.json:', err);
+      return null;
+    }
+  }
+
   /* ---------------------------------------------------------------
-     8. HOMEPAGE: render blog cards
+     8. BLOG CARDS — homepage (latest N) and blog.html (all)
      --------------------------------------------------------------- */
   const blogGrid = document.getElementById('blog-grid');
+
+  /**
+   * Picks the posts shown on the homepage.
+   *
+   * A post can claim a fixed slot by setting "homeOrder" in blog.json — that's
+   * how a standout post stays on the front page even once newer posts exist.
+   * Slots left over after the pinned ones are filled with the most recent
+   * unpinned posts, so the grid is never short if a pin is removed.
+   */
+  function selectHomePosts(limit) {
+    const isPinned = p => Number.isFinite(p.homeOrder);
+    const pinned = blogData.filter(isPinned).sort((a, b) => a.homeOrder - b.homeOrder);
+    const rest   = blogData.filter(p => !isPinned(p)); // already sorted newest first
+    return [...pinned, ...rest].slice(0, limit);
+  }
 
   function renderBlogCards() {
     if (!blogGrid || !blogData) return;
@@ -245,7 +303,11 @@
       return;
     }
 
-    blogGrid.innerHTML = blogData.map(post => {
+    // data-blog-limit="4" on the homepage grid; absent on blog.html = show all
+    const limit = parseInt(blogGrid.dataset.blogLimit, 10);
+    const posts = Number.isFinite(limit) ? selectHomePosts(limit) : blogData;
+
+    blogGrid.innerHTML = posts.map(post => {
       const lp = post[currentLang] || post.en;
       const tagsHTML = (post.tags || []).slice(0, 4).map(t => `<span class="tag">${t}</span>`).join('');
       const url = `article.html?slug=${encodeURIComponent(post.slug)}`;
@@ -254,7 +316,7 @@
         <div class="col-md-6 col-lg-4">
           <article class="blog-card">
             <a href="${url}" class="blog-card-image">
-              <img src="${post.image}" alt="${lp.title}" loading="lazy" />
+              <img src="${esc(post.image)}" alt="${esc(lp.title)}" loading="lazy" />
             </a>
             <div class="blog-card-body">
               <div class="blog-card-meta">
@@ -280,7 +342,63 @@
   }
 
   /* ---------------------------------------------------------------
-     9. ARTICLE PAGE: render single post
+     9. PROJECT CARDS — homepage (featured) and projects.html (all)
+     --------------------------------------------------------------- */
+  const workGrid = document.getElementById('work-grid');
+
+  function renderProjectCards() {
+    if (!workGrid || !projectData) return;
+    const dict = translations[currentLang];
+
+    if (projectData.length === 0) {
+      workGrid.innerHTML = `<div class="col-12 blog-loading">${dict['work.error']}</div>`;
+      return;
+    }
+
+    // data-project-mode="featured" on the homepage grid; absent on projects.html = show all
+    const featuredOnly = workGrid.dataset.projectMode === 'featured';
+    const projects = featuredOnly ? projectData.filter(p => p.featured) : projectData;
+
+    workGrid.innerHTML = projects.map(project => {
+      const lp = project[currentLang] || project.en || {};
+      const tagsHTML = (project.tags || []).map(t => `<span class="tag">${t}</span>`).join('');
+
+      const livePill = project.live ? `
+              <a href="${esc(project.live)}" class="live-pill" target="_blank" rel="noopener">
+                <span>${dict['card.live']}</span>
+                <i class="bi bi-box-arrow-up-right"></i>
+              </a>` : '';
+
+      const githubLink = project.github ? `
+              <a href="${esc(project.github)}" target="_blank" rel="noopener" class="project-github">
+                <i class="bi bi-github"></i>
+                <span>${dict['card.github']}</span>
+              </a>` : '';
+
+      return `
+        <div class="col-md-6">
+          <article class="project-card">
+            <div class="project-image">
+              <img src="${esc(project.image)}" alt="${esc(project.title)} screenshot" loading="lazy" />${livePill}
+            </div>
+            <div class="project-body">
+              <div class="project-head">
+                <h3 class="project-title">${project.title}</h3>
+                <span class="project-category">${project.category}</span>
+              </div>
+              <p class="project-desc">${lp.description || ''}</p>
+              <div class="project-tags">${tagsHTML}</div>${githubLink}
+            </div>
+          </article>
+        </div>
+      `;
+    }).join('');
+
+    applyReveal(workGrid.querySelectorAll('.project-card'));
+  }
+
+  /* ---------------------------------------------------------------
+     10. ARTICLE PAGE: render single post
      --------------------------------------------------------------- */
   function getSlugFromURL() {
     const params = new URLSearchParams(window.location.search);
@@ -404,7 +522,7 @@ bindLightbox(gallery);
   }
 
   /* ---------------------------------------------------------------
-     10. LIGHTBOX
+     11. LIGHTBOX
      --------------------------------------------------------------- */
   function bindLightbox(scope) {
     const lightbox    = document.getElementById('lightbox');
@@ -444,7 +562,7 @@ bindLightbox(gallery);
   }
 
   /* ---------------------------------------------------------------
-     11. SCROLL REVEAL
+     12. SCROLL REVEAL
      --------------------------------------------------------------- */
   let io;
   function applyReveal(extraNodes) {
@@ -479,48 +597,62 @@ bindLightbox(gallery);
   }
 
   /* ---------------------------------------------------------------
-     12. BOOT — decides what to do based on the current page
+     13. BOOT — decides what to do based on the current page
      --------------------------------------------------------------- */
+  function mountArticle(posts) {
+    const slug = getSlugFromURL();
+    const post = posts.find(p => p.slug === slug);
+    if (!post) {
+      showArticleError();
+      return;
+    }
+    currentPost = post;
+    renderArticle(post);
+    // swap loading -> content
+    document.getElementById('article-loading').hidden = true;
+    document.getElementById('article-content').hidden = false;
+    // re-apply translations now that DOM has new [data-i18n] nodes — actually not added,
+    // but keep this safe in case future content uses them
+    applyStaticTranslations(currentLang);
+  }
+
   async function boot() {
     // Apply UI strings first so anything visible is already translated
     setLang(currentLang);
     applyReveal();
 
-    // Detect which page we're on by looking for unique elements
-    const isBlogHome   = !!blogGrid;
+    // Detect what this page needs by looking for unique elements.
+    // #blog-grid   -> index.html (latest 3) and blog.html (all)
+    // #work-grid   -> index.html (featured) and projects.html (all)
+    // #article-content -> article.html
     const isArticlePage = !!document.getElementById('article-content');
+    const jobs = [];
 
-    if (isBlogHome || isArticlePage) {
-      const data = await loadBlogData();
-
-      if (!data) {
-        // Failed to fetch
-        if (blogGrid) {
-          blogGrid.innerHTML = `<div class="col-12 blog-loading">${translations[currentLang]['blog.error']}</div>`;
-        }
-        if (isArticlePage) showArticleError();
-        return;
-      }
-
-      if (isBlogHome) renderBlogCards();
-
-      if (isArticlePage) {
-        const slug = getSlugFromURL();
-        const post = data.find(p => p.slug === slug);
-        if (!post) {
-          showArticleError();
+    if (blogGrid || isArticlePage) {
+      jobs.push(loadBlogData().then(data => {
+        if (!data) {
+          if (blogGrid) {
+            blogGrid.innerHTML = `<div class="col-12 blog-loading">${translations[currentLang]['blog.error']}</div>`;
+          }
+          if (isArticlePage) showArticleError();
           return;
         }
-        currentPost = post;
-        renderArticle(post);
-        // swap loading -> content
-        document.getElementById('article-loading').hidden = true;
-        document.getElementById('article-content').hidden = false;
-        // re-apply translations now that DOM has new [data-i18n] nodes — actually not added,
-        // but keep this safe in case future content uses them
-        applyStaticTranslations(currentLang);
-      }
+        if (blogGrid) renderBlogCards();
+        if (isArticlePage) mountArticle(data);
+      }));
     }
+
+    if (workGrid) {
+      jobs.push(loadProjectData().then(data => {
+        if (!data) {
+          workGrid.innerHTML = `<div class="col-12 blog-loading">${translations[currentLang]['work.error']}</div>`;
+          return;
+        }
+        renderProjectCards();
+      }));
+    }
+
+    await Promise.all(jobs);
   }
 
   function showArticleError() {

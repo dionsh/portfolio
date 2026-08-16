@@ -496,9 +496,24 @@ p, h1, h2, h3, h4, h5, h6 {
   max-width: 640px;
 }
 
+/* Sub-page wrapper (blog.html / projects.html) — clears the fixed navbar,
+   since those pages have no hero section sitting under it */
+.page-main {
+  min-height: 100vh;
+  padding-top: var(--nav-h);
+}
+
+/* Centred button row under a card grid — "See All Posts" etc. */
+.section-cta {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+}
+
 @media (max-width: 576px) {
   .section { padding: 4rem 0; }
   .section-head { margin-bottom: 2rem; }
+  .section-cta { margin-top: 2rem; }
 }
 
 /* ============================================================
