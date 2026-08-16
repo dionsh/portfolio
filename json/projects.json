@@ -1,13 +1,57 @@
 {
   "projects": [
     {
+      "slug": "ds-banking",
+      "title": "DS Banking",
+      "image": "images/23.png",
+      "category": "Mobile App",
+      "featured": true,
+      "github": "https://github.com/dionsh/DS-Banking",
+      "tags": ["React Native", "PHP", "MySQL"],
+      "en": {
+        "description": "DS Banking is a React Native mobile banking app on a PHP and MySQL backend, covering balances, secure transfers, transaction history and phone top-ups. NOVA — an AI model I trained specifically for this app — breaks down how you spend, with gamification layered on top. 1st Place in the React Native Category and selected best project at Digital School."
+      },
+      "sq": {
+        "description": "DS Banking është një aplikacion bankar celular me React Native mbi një backend PHP dhe MySQL, që mbulon bilancet, transfertat e sigurta, historikun e transaksioneve dhe mbushjet telefonike. NOVA — një model AI që e kam trajnuar posaçërisht për këtë aplikacion — analizon mënyrën si i shpenzon paratë, së bashku me elemente gamifikimi. Vendi i parë në kategorinë React Native dhe projekti më i mirë i zgjedhur në Shkollën Digjitale."
+      }
+    },
+    {
+      "slug": "venuesphere",
+      "title": "VenueSphere",
+      "image": "images/venuesphere.png",
+      "category": "Web App",
+      "featured": true,
+      "live": "https://venue-sphere.vercel.app/",
+      "tags": ["React.js", "Three.js", "Python", "SQLite"],
+      "en": {
+        "description": "VenueSphere is a booking platform for event spaces — wedding halls, conference rooms, coworking and an esports arena. You walk each room in 3D and arrange the furniture, or describe your event in plain language and let the AI — a model I trained specifically for this platform — match it to a room and lay it out."
+      },
+      "sq": {
+        "description": "VenueSphere është një platformë rezervimesh për hapësira eventesh — salla dasmash, salla konferencash, coworking dhe një arenë esports. Çdo dhomë shihet në 3D ku rregullon mobiliet, ose përshkruaj eventin me fjalë të thjeshta dhe AI — një model që e kam trajnuar posaçërisht për këtë platformë — e përputh me një dhomë dhe ia rregullon planimetrinë."
+      }
+    },
+    {
+      "slug": "hugo",
+      "title": "Hugo",
+      "image": "images/Hugo.png",
+      "category": "E-Commerce",
+      "featured": true,
+      "live": "https://hugo-ds.vercel.app/",
+      "tags": ["HTML", "CSS", "JavaScript", "JSON", "Bootstrap", "jsPDF"],
+      "en": {
+        "description": "Hugo is a fashion storefront concept inspired by the clothing brand HUGO. It pairs an editorial heritage timeline with a working shop — a JSON product catalogue, a persistent cart, accounts, three languages and a PDF order receipt built in the browser."
+      },
+      "sq": {
+        "description": "Hugo është një koncept dyqani mode i frymëzuar nga marka e veshjeve HUGO. Bashkon një kronologji editoriale të historikut me një dyqan funksional — katalog produktesh në JSON, shportë të qëndrueshme, llogari, tri gjuhë dhe faturë PDF të gjeneruar në shfletues."
+      }
+    },
+    {
       "slug": "humanityconnect",
       "title": "HumanityConnect",
       "image": "images/foto4.png",
       "category": "Web App",
       "featured": true,
       "github": "https://github.com/dionsh/HumanityConnect",
-      "live": "https://github.com/dionsh/HumanityConnect",
       "tags": ["HTML", "CSS", "JavaScript", "PHP", "MySQL", "Bootstrap", "Chart.js"],
       "en": {
         "description": "HumanityConnect is a Good Deeds Tracker that connects volunteers with events and tracks their hours or achievements."
@@ -17,29 +61,12 @@
       }
     },
     {
-      "slug": "ds-banking",
-      "title": "DS Banking",
-      "image": "images/23.png",
-      "category": "Mobile App",
-      "featured": true,
-      "github": "https://github.com/dionsh/DS-Banking",
-      "live": "https://github.com/dionsh/DS-Banking",
-      "tags": ["React Native", "PHP", "MySQL"],
-      "en": {
-        "description": "DS Banking is a React Native mobile banking app that lets users securely manage finances on the go."
-      },
-      "sq": {
-        "description": "DS Banking është një aplikacion bankar celular me React Native që u lejon përdoruesve të menaxhojnë në mënyrë të sigurt financat në lëvizje."
-      }
-    },
-    {
       "slug": "vogue",
       "title": "Vogue",
       "image": "images/foto1.png",
       "category": "WordPress",
-      "featured": true,
+      "featured": false,
       "github": "https://github.com/dionsh/Vogue-Website",
-      "live": "https://github.com/dionsh/Vogue-Website",
       "tags": ["WordPress", "HTML", "CSS", "JavaScript", "PHP", "MySQL"],
       "en": {
         "description": "A modern, high-fashion concept website inspired by Vogue, meticulously crafted with WordPress to deliver a premium editorial experience."
@@ -53,9 +80,8 @@
       "title": "DION SHERIFI Bookings",
       "image": "images/foto2.png",
       "category": "Web App",
-      "featured": true,
+      "featured": false,
       "github": "https://github.com/dionsh/DION-SHERIFI-Bookings",
-      "live": "https://github.com/dionsh/DION-SHERIFI-Bookings",
       "tags": ["HTML", "CSS", "JavaScript", "PHP", "MySQL", "Bootstrap", "Chart.js"],
       "en": {
         "description": "DION SHERIFI Bookings is an all-in-one reservation ecosystem built to handle scheduling across multiple business sectors. The platform connects clients and businesses through three tailored user roles."

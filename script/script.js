@@ -31,7 +31,7 @@
 
       'about.title':    'About me',
       'about.p1':       "Hi! I'm <strong>Dion Sherifi</strong>, a full-stack developer and a second-year student at <strong>Digital School Ferizaj</strong>. I love turning ideas into real, working products — especially the kind of tools people actually use day to day.",
-      'about.p2':       "I'm most at home in <strong>PHP &amp; MySQL</strong>, where I build the backend logic and data layer for full applications. On the frontend I work with HTML, CSS, JavaScript, React Native and WordPress.",
+      'about.p2':       "I'm most at home in <strong>PHP &amp; MySQL</strong>, where I build the backend logic and data layer for full applications. On the frontend I work with HTML, CSS, JavaScript, React.js, React Native and WordPress.",
       'about.p3':       "I'm currently open to freelance work and collaboration. If you have an idea you want shipped, let's talk.",
       'about.stackTitle': 'My stack',
 
@@ -88,7 +88,7 @@
 
       'about.title':    'Rreth meje',
       'about.p1':       "Përshëndetje! Unë jam <strong>Dion Sherifi</strong>, zhvillues full-stack dhe nxënës i vitit të dytë në <strong>Shkollën Digjitale Ferizaj</strong>. Më pëlqen t'i kthej idetë në produkte reale që funksionojnë — sidomos mjete që njerëzit i përdorin përditë.",
-      'about.p2':       "Jam më i komodë me <strong>PHP &amp; MySQL</strong>, ku ndërtoj logjikën backend dhe shtresën e të dhënave për aplikacione të plota. Në frontend punoj me HTML, CSS, JavaScript, React Native dhe WordPress",
+      'about.p2':       "Jam më i komodë me <strong>PHP &amp; MySQL</strong>, ku ndërtoj logjikën backend dhe shtresën e të dhënave për aplikacione të plota. Në frontend punoj me HTML, CSS, JavaScript, React.js, React Native dhe WordPress.",
       'about.p3':       'Aktualisht jam i hapur për punë freelance dhe bashkëpunime. Nëse ke një ide që dëshiron ta realizosh, le të bisedojmë.',
       'about.stackTitle': 'Stack-u im',
 
@@ -421,7 +421,7 @@
     };
     const absImage = post.image
       ? new URL(post.image, 'https://dionsherifi.com/').href
-      : 'https://dionsherifi.com/images/og-card.png';
+      : 'https://dionsherifi.com/images/og-card.png?v=2';
 
     if (lp.description) {
       setMeta('meta-description', lp.description);
