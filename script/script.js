@@ -58,6 +58,13 @@
 
       'nav.backHome':   '<i class="bi bi-arrow-left"></i> Back to home',
 
+      'notfound.greet': '// error 404',
+      'notfound.tag':   '&lt;page not found<span class="cursor">/</span>&gt;',
+      'notfound.sub':   "This page doesn't exist, or it moved somewhere else. Let's get you back on track.",
+      'notfound.home':  'Back to home',
+      'notfound.work':  'See my work',
+      'notfound.blog':  'Read the blog',
+
       'contact.title':  'Get in touch',
       'contact.lead':   "I'm currently open to freelance work and collaboration. Whether it's a project idea, a question, or just a hello — my inbox is open.",
 
@@ -114,6 +121,13 @@
       'blog.seeAll':    'Shiko të Gjitha Postimet <i class="bi bi-arrow-right"></i>',
 
       'nav.backHome':   '<i class="bi bi-arrow-left"></i> Kthehu te kreu',
+
+      'notfound.greet': '// gabim 404',
+      'notfound.tag':   '&lt;faqja nuk u gjet<span class="cursor">/</span>&gt;',
+      'notfound.sub':   'Kjo faqe nuk ekziston, ose është zhvendosur diku tjetër. Le të të kthejmë në rrugën e duhur.',
+      'notfound.home':  'Kthehu te kreu',
+      'notfound.work':  'Shiko punët e mia',
+      'notfound.blog':  'Lexo blogun',
 
       'contact.title':  'Më kontakto',
       'contact.lead':   'Aktualisht jam i hapur për punë freelance dhe bashkëpunime. Qoftë një ide projekti, një pyetje, apo thjesht një përshëndetje — kutia ime është e hapur.',
@@ -218,6 +232,13 @@
     return d.toLocaleDateString(locale, { year: 'numeric', month: 'long', day: 'numeric' });
   }
 
+  // Root-absolute asset path. Prerendered posts live at /blog/<slug>/, two
+  // levels deep, so a bare "images/…" would resolve against that directory.
+  function asset(p) {
+    if (!p || /^https?:\/\//.test(p) || p.startsWith('/')) return p;
+    return '/' + p;
+  }
+
   // Escape a value before dropping it into an HTML attribute
   function esc(value) {
     return String(value ?? '')
@@ -253,7 +274,7 @@
 
   async function loadBlogData() {
     try {
-      const data = await fetchJSON('json/blog.json');
+      const data = await fetchJSON('/json/blog.json');
       // Sorted newest first, so "the 3 latest" is just a slice of this order
       blogData = (data.posts || []).sort((a, b) => new Date(b.date) - new Date(a.date));
       return blogData;
@@ -265,7 +286,7 @@
 
   async function loadProjectData() {
     try {
-      const data = await fetchJSON('json/projects.json');
+      const data = await fetchJSON('/json/projects.json');
       projectData = data.projects || [];
       return projectData;
     } catch (err) {
@@ -310,13 +331,13 @@
     blogGrid.innerHTML = posts.map(post => {
       const lp = post[currentLang] || post.en;
       const tagsHTML = (post.tags || []).slice(0, 4).map(t => `<span class="tag">${t}</span>`).join('');
-      const url = `article.html?slug=${encodeURIComponent(post.slug)}`;
+      const url = `/blog/${encodeURIComponent(post.slug)}`;
 
       return `
         <div class="col-md-6 col-lg-4">
           <article class="blog-card">
             <a href="${url}" class="blog-card-image">
-              <img src="${esc(post.image)}" alt="${esc(lp.title)}" loading="lazy" />
+              <img src="${esc(asset(post.image))}" alt="${esc(lp.title)}" loading="lazy" />
             </a>
             <div class="blog-card-body">
               <div class="blog-card-meta">
@@ -379,7 +400,7 @@
         <div class="col-md-6">
           <article class="project-card">
             <div class="project-image">
-              <img src="${esc(project.image)}" alt="${esc(project.title)} screenshot" loading="lazy" />${livePill}
+              <img src="${esc(asset(project.image))}" alt="${esc(project.title)} screenshot" loading="lazy" />${livePill}
             </div>
             <div class="project-body">
               <div class="project-head">
@@ -400,9 +421,21 @@
   /* ---------------------------------------------------------------
      10. ARTICLE PAGE: render single post
      --------------------------------------------------------------- */
+  /**
+   * Which post is this page?
+   *  1. ?slug=…            — legacy article.html links
+   *  2. body[data-slug]    — prerendered pages from build/build-blog.js
+   *  3. /blog/<slug>       — clean URL, in case the attribute is ever missing
+   */
   function getSlugFromURL() {
-    const params = new URLSearchParams(window.location.search);
-    return params.get('slug');
+    const fromQuery = new URLSearchParams(window.location.search).get('slug');
+    if (fromQuery) return fromQuery;
+
+    const fromAttr = document.body && document.body.dataset.slug;
+    if (fromAttr) return fromAttr;
+
+    const m = window.location.pathname.match(/\/blog\/([^/]+)\/?$/);
+    return m ? decodeURIComponent(m[1]) : null;
   }
 
   function renderArticle(post) {
@@ -420,7 +453,7 @@
       if (el) el.content = val;
     };
     const absImage = post.image
-      ? new URL(post.image, 'https://dionsherifi.com/').href
+      ? new URL(asset(post.image), 'https://dionsherifi.com/').href
       : 'https://dionsherifi.com/images/og-card.png?v=2';
 
     if (lp.description) {
@@ -434,7 +467,7 @@
     // Cover
     const coverImg = document.getElementById('article-cover-img');
     if (coverImg) {
-      coverImg.src = post.image;
+      coverImg.src = asset(post.image);
       coverImg.alt = lp.title;
     }
 
@@ -472,9 +505,10 @@
     gallery.innerHTML = (post.gallery || []).map((item, i) => {
   // Backward-compatible: plain string = image
   if (typeof item === 'string') {
+    const src = asset(item);
     return `
-      <div class="gallery-item" data-src="${item}" role="button" tabindex="0" aria-label="View image ${i + 1}">
-        <img src="${item}" alt="${lp.title} — image ${i + 1}" loading="lazy" />
+      <div class="gallery-item" data-src="${src}" role="button" tabindex="0" aria-label="View image ${i + 1}">
+        <img src="${src}" alt="${lp.title} — image ${i + 1}" loading="lazy" />
       </div>
     `;
   }

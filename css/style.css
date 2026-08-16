@@ -1353,6 +1353,17 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 
 /* ============================================================
+   404 PAGE
+   ============================================================ */
+/* Reuses .hero-name for the gradient fill. Only the size is overridden:
+   "404" is three characters, so it can run much larger than the hero
+   clamp, which is sized to keep "Dion Sherifi" on one line. */
+.error-code {
+  font-size: clamp(4.5rem, 20vw, 10rem);
+  letter-spacing: -0.04em;
+}
+
+/* ============================================================
    RESPONSIVE BREAKPOINTS
    ============================================================ */
 
@@ -1486,6 +1497,10 @@ p, h1, h2, h3, h4, h5, h6 {
 @media (max-width: 380px) {
   .hero-name {
     font-size: 2rem;
+  }
+  /* …but "404" is short, so it keeps a display size even here */
+  .error-code {
+    font-size: 4.5rem;
   }
   .hero-tag {
     font-size: 1.15rem;
