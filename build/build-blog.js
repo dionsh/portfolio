@@ -204,26 +204,35 @@ function renderPost(template, post) {
    --------------------------------------------------------------- */
 
 function main() {
-  const template = fs.readFileSync(TEMPLATE, 'utf8');
+  // Normalise to LF. Windows checks these files out with CRLF endings
+  // (core.autocrlf plus `* text=auto` in .gitattributes), while the multi-line
+  // patterns above are written with newline escapes - without this they stop
+  // matching after a fresh clone and every replaceOnce() throws.
+  const template = fs.readFileSync(TEMPLATE, 'utf8').replace(/\r\n/g, '\n');
   const posts    = JSON.parse(fs.readFileSync(DATA, 'utf8')).posts || [];
 
   if (!posts.length) { console.error('build-blog: no posts in blog.json'); process.exit(1); }
+
+  // Render everything before touching the disk, so a template mismatch leaves
+  // the existing blog/ intact instead of wiping it and then failing partway.
+  const seen = new Set();
+  const pages = posts.map(post => {
+    if (!post.slug)     throw new Error('build-blog: a post is missing "slug"');
+    if (seen.has(post.slug)) throw new Error(`build-blog: duplicate slug "${post.slug}"`);
+    if (!post.en || !post.en.title) throw new Error(`build-blog: "${post.slug}" is missing en.title`);
+    seen.add(post.slug);
+    return { slug: post.slug, html: renderPost(template, post) };
+  });
 
   // Wipe previously generated dirs so deleted posts don't linger as live pages
   if (fs.existsSync(OUT_DIR)) fs.rmSync(OUT_DIR, { recursive: true, force: true });
   fs.mkdirSync(OUT_DIR, { recursive: true });
 
-  const seen = new Set();
-  for (const post of posts) {
-    if (!post.slug)     throw new Error('build-blog: a post is missing "slug"');
-    if (seen.has(post.slug)) throw new Error(`build-blog: duplicate slug "${post.slug}"`);
-    if (!post.en || !post.en.title) throw new Error(`build-blog: "${post.slug}" is missing en.title`);
-    seen.add(post.slug);
-
-    const dir = path.join(OUT_DIR, post.slug);
+  for (const page of pages) {
+    const dir = path.join(OUT_DIR, page.slug);
     fs.mkdirSync(dir, { recursive: true });
-    fs.writeFileSync(path.join(dir, 'index.html'), renderPost(template, post), 'utf8');
-    console.log(`  /blog/${post.slug}`);
+    fs.writeFileSync(path.join(dir, 'index.html'), page.html, 'utf8');
+    console.log(`  /blog/${page.slug}`);
   }
 
   console.log(`\nbuild-blog: wrote ${posts.length} pages to blog/`);
