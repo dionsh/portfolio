@@ -1,0 +1,20 @@
+/* ==========================================================================
+   DION SHERIFI - pages/404.css
+   404.html only.
+   ========================================================================== */
+
+/* Reuses .hero-name for the gradient fill. Only the size is overridden:
+   "404" is three characters, so it can run much larger than the hero
+   clamp, which is sized to keep "Dion Sherifi" on one line. */
+.error-code {
+  font-size: clamp(4.5rem, 20vw, 10rem);
+  letter-spacing: -0.04em;
+}
+
+/* Very small phones */
+@media (max-width: 380px) {
+  /* …but "404" is short, so it keeps a display size even here */
+  .error-code {
+    font-size: 4.5rem;
+  }
+}

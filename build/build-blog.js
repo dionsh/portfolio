@@ -9,10 +9,10 @@
 
    Why: link scrapers (LinkedIn, WhatsApp, Slack, Facebook) and weaker
    crawlers (Bing/Edge) never run JS, so the old article.html?slug=… shell
-   looked identical for every post. See README-BLOG-BUILD.md.
+   looked identical for every post. See docs/blog-build.md.
 
-   json/blog.json stays the single source of truth. script.js still hydrates
-   the page on load, which is what keeps the EN/SQ toggle working.
+   json/blog.json stays the single source of truth. js/pages/article.js
+   still hydrates the page on load, which keeps the EN/SQ toggle working.
 
    Run after adding or editing a post:   node build/build-blog.js
    ========================================================================== */
@@ -29,7 +29,7 @@ const DATA     = path.join(ROOT, 'json', 'blog.json');
 const OUT_DIR  = path.join(ROOT, 'blog');
 
 /* ---------------------------------------------------------------
-   Helpers — these mirror script.js so static and hydrated output match
+   Helpers — these mirror js/core/utils.js so static and hydrated output match
    --------------------------------------------------------------- */
 
 const escAttr = v => String(v ?? '')
@@ -39,7 +39,7 @@ const escAttr = v => String(v ?? '')
 const escHTML = v => String(v ?? '')
   .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 
-// Same minimal markdown as script.js: escape, then **bold** -> <strong>
+// Same minimal markdown as js/core/utils.js: escape, then **bold** -> <strong>
 const inlineMarkdown = text =>
   escHTML(text).replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
 
@@ -126,11 +126,13 @@ function renderPost(template, post) {
 
   let html = template;
 
-  // --- 1. Make every relative reference root-absolute (page lives 2 deep)
-  html = html.replace(/href="css\/style\.css"/g,     'href="/css/style.css"');
-  html = html.replace(/src="script\/script\.js"/g,   'src="/script/script.js"');
-  html = html.replace(/href="index\.html"/g,         'href="/"');
-  html = html.replace(/href="blog\.html"/g,          'href="/blog.html"');
+  // --- 1. Make every relative reference root-absolute (page lives 2 deep).
+  //        The stylesheet and module lists come from article.html itself, so
+  //        adding a <link> there needs no change here.
+  html = html.replace(/href="(css\/[^"]+)"/g,         (_, p) => `href="/${p}"`);
+  html = html.replace(/src="(js\/[^"]+)"/g,           (_, p) => `src="/${p}"`);
+  html = html.replace(/href="index\.html"/g,          'href="/"');
+  html = html.replace(/href="blog\.html"/g,           'href="/blog.html"');
 
   // --- 2. Head: title + description
   html = replaceOnce(html, /<title>[^<]*<\/title>/,
@@ -162,7 +164,7 @@ function renderPost(template, post) {
     `  <script type="application/ld+json">\n${buildJsonLd(post, en, url)}\n  </script>\n</head>`,
     '</head>');
 
-  // --- 5. Tell script.js which post this is (no ?slug= on clean URLs)
+  // --- 5. Tell the article module which post this is (no ?slug= on clean URLs)
   html = replaceOnce(html, /<body class="article-body">/,
     `<body class="article-body" data-slug="${escAttr(post.slug)}">`, '<body>');
 
