@@ -1,63 +1,199 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://dionsherifi.com/</loc>
     <lastmod>2026-08-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://dionsherifi.com/images/23.png</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://dionsherifi.com/images/venuesphere.png</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://dionsherifi.com/images/Hugo.png</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://dionsherifi.com/images/foto4.png</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://dionsherifi.com/images/blog/ferizaj_code26/cover.jpeg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://dionsherifi.com/images/blog/itp_prizren/cover.jpeg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://dionsherifi.com/images/blog/junction_Tirana26/cover.jpeg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://dionsherifi.com/images/blog/buildact_hck/cover.jpeg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://dionsherifi.com/blog.html</loc>
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://dionsherifi.com/images/blog/ferizaj_code26/cover.jpeg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://dionsherifi.com/images/blog/junction_Tirana26/cover.jpeg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://dionsherifi.com/images/blog/buildact_hck/cover.jpeg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://dionsherifi.com/images/blog/itp_prizren/cover.jpeg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://dionsherifi.com/images/blog/fullstack/din.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://dionsherifi.com/images/blog/champ/hacka.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://dionsherifi.com/images/blog/ferizaj_code/ff3.jpeg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://dionsherifi.com/projects.html</loc>
     <lastmod>2026-08-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://dionsherifi.com/images/23.png</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://dionsherifi.com/images/venuesphere.png</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://dionsherifi.com/images/Hugo.png</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://dionsherifi.com/images/foto4.png</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://dionsherifi.com/images/foto1.png</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://dionsherifi.com/images/foto2.png</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://dionsherifi.com/blog/ferizaj-code-fest-2026-first-place</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://dionsherifi.com/images/blog/ferizaj_code26/cover.jpeg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://dionsherifi.com/images/blog/ferizaj_code26/IMG_6836.jpeg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://dionsherifi.com/images/blog/ferizaj_code26/IMG_6854.jpeg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://dionsherifi.com/blog/junctionx-tirana-raiquest</loc>
     <lastmod>2026-06-21</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://dionsherifi.com/images/blog/junction_Tirana26/cover.jpeg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://dionsherifi.com/images/blog/junction_Tirana26/IMG_4296.jpeg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://dionsherifi.com/images/blog/junction_Tirana26/IMG_4459.jpg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://dionsherifi.com/blog/buildact-hackathon-sproutsync</loc>
     <lastmod>2026-06-07</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://dionsherifi.com/images/blog/buildact_hck/cover.jpeg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://dionsherifi.com/images/blog/buildact_hck/IMG_3464.jpeg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://dionsherifi.com/images/blog/buildact_hck/IMG_3466.jpeg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://dionsherifi.com/images/blog/buildact_hck/IMG_4050.jpeg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://dionsherifi.com/blog/junctionx-junior-itp-prizren</loc>
     <lastmod>2026-05-23</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://dionsherifi.com/images/blog/itp_prizren/cover.jpeg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://dionsherifi.com/images/blog/itp_prizren/IMG_1533.JPG</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://dionsherifi.com/images/blog/itp_prizren/IMG_3866.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://dionsherifi.com/images/blog/itp_prizren/IMG_3892.jpeg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://dionsherifi.com/blog/full-stack-tutorial-video</loc>
     <lastmod>2025-12-25</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://dionsherifi.com/images/blog/fullstack/din.jpg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://dionsherifi.com/blog/champion-trials-hackathon</loc>
     <lastmod>2025-11-23</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://dionsherifi.com/images/blog/champ/hacka.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://dionsherifi.com/images/blog/champ/dionn.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://dionsherifi.com/images/blog/champ/apl.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://dionsherifi.com/images/blog/champ/web.jpg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://dionsherifi.com/blog/ferizaj-code-fest-finalist</loc>
     <lastmod>2025-06-28</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://dionsherifi.com/images/blog/ferizaj_code/ff3.jpeg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://dionsherifi.com/images/blog/ferizaj_code/ff.jpeg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://dionsherifi.com/images/blog/ferizaj_code/ff4.jpeg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://dionsherifi.com/images/blog/ferizaj_code/ff9.jpeg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://dionsherifi.com/images/blog/ferizaj_code/resul.jpg</image:loc>
+    </image:image>
   </url>
 </urlset>
