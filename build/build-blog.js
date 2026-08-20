@@ -141,6 +141,13 @@ function renderPost(template, post) {
     `<meta id="meta-description" name="description" content="${escAttr(en.description)}" />`,
     'meta description');
 
+  // The shell carries noindex so bare /article.html stays out of the index;
+  // every real post must carry it back.
+  html = replaceOnce(html,
+    /  <!-- Bare \/article\.html[\s\S]*?-->\r?\n  <meta id="meta-robots" name="robots" content="[^"]*" \/>/,
+    '  <meta id="meta-robots" name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />',
+    'meta robots');
+
   // --- 3. The template rewrites canonical/og:url from ?slug= at runtime.
   //        Prerendered pages bake the real URL in, so that script goes.
   html = replaceOnce(html, /\n  <script>\n    \(function \(\) \{[\s\S]*?\}\)\(\);\n  <\/script>\n/,

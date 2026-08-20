@@ -6,7 +6,9 @@
   <title>Blog — Dion Sherifi</title>
   <meta id="meta-description" name="description" content="Writing from Dion Sherifi — a full-stack developer from Ferizaj, Kosovo — on programming, competitions and building real projects." />
   <meta name="author" content="Dion Sherifi" />
-  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+  <!-- Bare /article.html is an empty shell; the real posts are prerendered at
+       /blog/<slug>. build-blog.js swaps this back to index,follow per post. -->
+  <meta id="meta-robots" name="robots" content="noindex, follow" />
   <meta name="theme-color" content="#0a0f1e" />
 
   <!-- ============ FAVICON ============ -->
