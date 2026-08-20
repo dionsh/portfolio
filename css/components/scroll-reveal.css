@@ -1,0 +1,22 @@
+/* ==========================================================================
+   DION SHERIFI - components/scroll-reveal.css
+   Scroll-in animation, driven by js/core/reveal.js.
+   Used by: index.html, projects.html, blog.html
+
+   LINK THIS LAST. `.reveal.visible` and the card `:hover` rules have the
+   same specificity, so whichever is declared last wins. In the original
+   single-file stylesheet these rules sat at the very bottom, which is why
+   a revealed card keeps its border and shadow hover but not the lift.
+   Loading this file earlier would silently switch that lift back on.
+   ========================================================================== */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}

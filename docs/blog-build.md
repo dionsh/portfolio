@@ -38,8 +38,8 @@ Link scrapers (LinkedIn, WhatsApp, Slack, Facebook) and weaker crawlers
 the generic site card, and search engines saw seven identical pages.
 
 Now each post is a real page at `/blog/<slug>` with its own metadata.
-`script.js` still hydrates it on load, which is what keeps the EN/SQ toggle
-working.
+`js/pages/article.js` still hydrates it on load, which is what keeps the EN/SQ
+toggle working.
 
 ## What is generated vs. hand-written
 
@@ -48,6 +48,10 @@ working.
 | `build/build-blog.js` | the generator |
 | `article.html` | the **template** — edit this to change article layout |
 | `blog/<slug>/index.html` | **generated, do not edit by hand** (wiped on each run) |
+
+The generator rewrites the template's relative `css/…` and `js/…` references to
+root-absolute ones, because the generated pages sit two directories deep. Adding
+a stylesheet or module to `article.html` therefore needs no change here.
 
 Because `blog/` is deleted and rebuilt every run, deleting a post from
 `blog.json` also removes its page. Remember to drop it from `sitemap.xml` too.

@@ -1,0 +1,94 @@
+/* ==========================================================================
+   DION SHERIFI - components/section.css
+   Numbered section headings, the sub-page wrapper, and the grid
+   loading/error line.
+   Used by: index.html, projects.html, blog.html
+   ========================================================================== */
+
+.section {
+  position: relative;
+  padding: 6rem 0;
+  z-index: 1;
+}
+
+.section-head {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.section-num {
+  font-family: var(--font-mono);
+  color: var(--accent);
+  font-size: 1.1rem;
+  font-weight: 500;
+  flex-shrink: 0;
+}
+
+.section-title {
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.section-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, var(--border-strong), transparent);
+  max-width: 280px;
+  min-width: 40px;
+}
+
+.section-sub {
+  color: var(--text-secondary);
+  font-size: clamp(0.95rem, 2vw, 1.05rem);
+  margin-bottom: 3rem;
+  max-width: 640px;
+}
+
+/* Sub-page wrapper (blog.html / projects.html) — clears the fixed navbar,
+   since those pages have no hero section sitting under it */
+.page-main {
+  min-height: 100vh;
+  padding-top: var(--nav-h);
+}
+
+/* Centred button row under a card grid — "See All Posts" etc. */
+.section-cta {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+}
+
+@media (max-width: 576px) {
+  .section { padding: 4rem 0; }
+  .section-head { margin-bottom: 2rem; }
+  .section-cta { margin-top: 2rem; }
+}
+
+.blog-loading {
+  text-align: center;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  padding: 3rem 0;
+}
+
+/* Small tablets / large phones */
+@media (max-width: 768px) {
+  .section-line { display: none; }
+}
+
+/* Phones */
+@media (max-width: 575.98px) {
+  .section {
+    padding: 3.5rem 0;
+  }
+  .section-head {
+    gap: 0.6rem;
+    margin-bottom: 1.75rem;
+  }
+}

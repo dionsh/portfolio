@@ -10,9 +10,11 @@
   <meta name="theme-color" content="#0a0f1e" />
 
   <!-- ============ FAVICON ============ -->
-  <link rel="icon" href="/favicon.ico" sizes="32x32" />
-  <link rel="icon" type="image/png" sizes="96x96" href="/images/icons/favicon-96.png" />
-  <link rel="apple-touch-icon" href="/images/icons/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
 
   <!-- Canonical: built from ?slug= so each post canonicalises to itself,
        not to a shared, empty article.html -->
@@ -40,7 +42,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Sora:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/css/base.css" />
+  <link rel="stylesheet" href="/css/pages/article.css" />
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -199,6 +202,6 @@
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="/script/script.js"></script>
+  <script type="module" src="/js/pages/article.js"></script>
 </body>
 </html>
