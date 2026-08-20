@@ -12,3 +12,6 @@ Thumbs.db
 
 # Logs
 *.log
+
+# Icon generator downloads
+*.zip
